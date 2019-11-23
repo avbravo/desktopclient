@@ -8,6 +8,7 @@ package com.avbravo.desktopclient;
 import java.util.List;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
@@ -33,6 +34,25 @@ public class NewMain {
         for (Factura n : listaFactura) {
             System.out.println(n.getIdfactura() + "Estado" + n.getEstado());
         }
+        System.out.println("=================FACTURA=====================");
+
+        Client cliente = ClientBuilder.newClient();
+        Factura f = cliente.target("http://localhost:3000/mifactura")
+                .request(MediaType.APPLICATION_JSON_TYPE).get(Factura.class);
+        System.out.println("");
+
+        System.out.println("==================INSERT===============");
+        Client client2 = ClientBuilder.newClient();
+        WebTarget target2 = client2.target("http://localhost:8080/microservicesfiscalsqlserver-0.2/resources/factura/add");
+
+      Factura factura = new Factura(23,134);
+      
+
+        Factura requestResult
+                = target.request(MediaType.APPLICATION_JSON_TYPE)
+                        .post(Entity.entity(factura, MediaType.APPLICATION_FORM_URLENCODED_TYPE),
+                                Factura.class);
+        System.out.println("creo que lo inserto");
     }
 
 }
