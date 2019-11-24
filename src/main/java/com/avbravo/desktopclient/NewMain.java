@@ -5,6 +5,8 @@
  */
 package com.avbravo.desktopclient;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -23,36 +25,52 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.2/resources/factura");
+        try {
+            Micro micro = new Micro();
+            String tecla="";
+            BufferedReader reader
+                    = new BufferedReader(new InputStreamReader(System.in));
+            String menu = "x";
+            while (!menu.equals("s")) {
+                System.out.println("==================================");
+                System.out.println("         Menu");
+                System.out.println("(1)findAll");
+             
+                System.out.println("(2)add");
+               
+                System.out.println("(s)alir");
+                System.out.println("\n Ingrese opcion?");
+                // Reading data using readLine 
+                menu = reader.readLine();
+                menu = menu.toLowerCase().trim();
+                switch (menu) {
+                    case "1":
+                        micro.findAll();
+                        System.out.println("...Presione una tecla");
+                      tecla= reader.readLine();
+                        break;
+                    case "2":
+                        micro.add();
+                          System.out.println("...Presione una tecla");
+                      tecla= reader.readLine();
+                        break;
+                  
+                   
+                 
+                    case "s":
+                        System.out.println("Saliendo");
+                        break;
+                    default:
+                        System.out.println("Opcion errada");
+                         System.out.println("...Presione una tecla");
+                      tecla= reader.readLine();
 
-        GenericType<List<Factura>> noticias = new GenericType<List<Factura>>() {
-        };
+                }
+            }
 
-        List<Factura> listaFactura = target.request(MediaType.APPLICATION_JSON).get(noticias);
-        for (Factura n : listaFactura) {
-            System.out.println(n.getIdfactura() + "Estado" + n.getEstado());
+        } catch (Exception e) {
+            System.out.println("main() " + e.getLocalizedMessage());
         }
-        System.out.println("=================FACTURA=====================");
-
-        Client cliente = ClientBuilder.newClient();
-        Factura f = cliente.target("http://localhost:3000/mifactura")
-                .request(MediaType.APPLICATION_JSON_TYPE).get(Factura.class);
-        System.out.println("");
-
-        System.out.println("==================INSERT===============");
-        Client client2 = ClientBuilder.newClient();
-        WebTarget target2 = client2.target("http://localhost:8080/microservicesfiscalsqlserver-0.2/resources/factura/add");
-
-      Factura factura = new Factura(23,134);
-      
-
-        Factura requestResult
-                = target.request(MediaType.APPLICATION_JSON_TYPE)
-                        .post(Entity.entity(factura, MediaType.APPLICATION_FORM_URLENCODED_TYPE),
-                                Factura.class);
-        System.out.println("creo que lo inserto");
     }
 
 }
