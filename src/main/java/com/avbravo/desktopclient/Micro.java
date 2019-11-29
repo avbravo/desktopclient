@@ -61,19 +61,19 @@ public class Micro {
 
     public Boolean add() {
         try {
-              BufferedReader reader
+            BufferedReader reader
                     = new BufferedReader(new InputStreamReader(System.in));
-            
+
             Factura factura = new Factura();
             System.out.println("Crear factura ");
             System.out.println("ingrese idfactura ");
-          String text  = reader.readLine();
-          factura.setIdfactura(Integer.parseInt(text));
-          
-           System.out.println("ingrese numero de estado ");
-         text  = reader.readLine();
-              factura.setEstado(Integer.parseInt(text));
-          
+            String text = reader.readLine();
+            factura.setIdfactura(Integer.parseInt(text));
+
+            System.out.println("ingrese numero de estado ");
+            text = reader.readLine();
+            factura.setEstado(Integer.parseInt(text));
+
             facturaServices.add(factura);
 
         } catch (Exception e) {
