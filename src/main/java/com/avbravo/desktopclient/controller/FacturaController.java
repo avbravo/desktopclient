@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.avbravo.desktopclient;
+package com.avbravo.desktopclient.controller;
 
 import com.avbravo.desktopclient.entity.Factura;
 import com.avbravo.desktopclient.services.FacturaServices;
@@ -13,18 +13,14 @@ import java.util.List;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import org.glassfish.jersey.client.ClientResponse;
 
 /**
  *
  * @author avbravo
  */
-public class Micro {
+public class FacturaController {
 
     FacturaServices facturaServices = new FacturaServices();
 
@@ -35,7 +31,7 @@ public class Micro {
                 System.out.println(n.getIdfactura() + "Estado" + n.getEstado());
             }
         } catch (Exception e) {
-            System.out.println("findAll()");
+            System.out.println("findAll()"+e.getLocalizedMessage());
         }
     }
 
@@ -43,7 +39,7 @@ public class Micro {
         try {
             System.out.println("==================INSERT===============");
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.2/resources/add");
+            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.3/resources/add");
 
             Factura factura = new Factura(23, 134);
 

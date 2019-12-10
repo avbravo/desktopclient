@@ -5,6 +5,9 @@
  */
 package com.avbravo.desktopclient;
 
+import com.avbravo.desktopclient.controller.Colores;
+import com.avbravo.desktopclient.controller.TClientesController;
+import com.avbravo.desktopclient.controller.FacturaController;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.List;
@@ -19,51 +22,55 @@ import javax.ws.rs.core.MediaType;
  *
  * @author avbravo
  */
-public class NewMain {
+public class Start {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         try {
-            Micro micro = new Micro();
-            String tecla="";
+            FacturaController facturaController = new FacturaController();
+            TClientesController tClientesController = new TClientesController();
+            String tecla = "";
             BufferedReader reader
                     = new BufferedReader(new InputStreamReader(System.in));
             String menu = "x";
             while (!menu.equals("s")) {
-                System.out.println("==================================");
-                System.out.println("         Menu");
-                System.out.println("(1)findAll");
-             
-                System.out.println("(2)add");
-               
-                System.out.println("(s)alir");
-                System.out.println("\n Ingrese opcion?");
+                System.out.println(Colores.azul()+"------------------------------------");
+                System.out.println(Colores.azul()+"         Menu");
+                System.out.println(Colores.azul()+"(1)Factura findAll");
+                System.out.println(Colores.azul()+"(2)Factura add");
+                System.out.println(Colores.azul()+"(3)Clientes findAll");
+
+                System.out.println(Colores.azul()+"(s)alir");
+                System.out.println(Colores.azul()+"\n Ingrese opcion?");
                 // Reading data using readLine 
                 menu = reader.readLine();
                 menu = menu.toLowerCase().trim();
                 switch (menu) {
                     case "1":
-                        micro.findAll();
+                        facturaController.findAll();
                         System.out.println("...Presione una tecla");
-                      tecla= reader.readLine();
+                        tecla = reader.readLine();
                         break;
                     case "2":
-                        micro.add();
-                          System.out.println("...Presione una tecla");
-                      tecla= reader.readLine();
+                        facturaController.add();
+                        System.out.println("...Presione una tecla");
+                        tecla = reader.readLine();
                         break;
-                  
-                   
-                 
+                    case "3":
+                        tClientesController.findAll();
+                        System.out.println("...Presione una tecla");
+                        tecla = reader.readLine();
+                        break;
+
                     case "s":
                         System.out.println("Saliendo");
                         break;
                     default:
                         System.out.println("Opcion errada");
-                         System.out.println("...Presione una tecla");
-                      tecla= reader.readLine();
+                        System.out.println("...Presione una tecla");
+                        tecla = reader.readLine();
 
                 }
             }

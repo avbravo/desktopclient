@@ -27,7 +27,7 @@ public class FacturaServices {
          List<Factura> facturaList = new ArrayList<>();
         try {
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.2/resources/factura");
+            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.3/resources/factura");
 
             GenericType<List<Factura>> noticias = new GenericType<List<Factura>>() {
             };
@@ -45,7 +45,7 @@ public class FacturaServices {
         try {
             Client client = ClientBuilder.newClient();
             WebTarget webTarget
-                    = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.2/resources/factura/factura/add");
+                    = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.3/resources/factura/factura/add");
 
             
             Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
