@@ -35,7 +35,7 @@ public class TClientesServices {
             tClientesList = target.request(MediaType.APPLICATION_JSON).get(noticias);
 
         } catch (Exception e) {
-            System.out.println("findAll()");
+            System.out.println("findAll()"+e.getLocalizedMessage());
         }
         return tClientesList;
     }

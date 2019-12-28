@@ -5,6 +5,7 @@
  */
 package com.avbravo.desktopclient.sql.entiry;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -88,9 +89,9 @@ public class TClientes implements Serializable {
     private String fpMinima;
   
     private Double importe;
-  
+   @JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date vacacionesDe;
-
+@JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date vacacionesA;
 
     private Short venceMes;
@@ -184,9 +185,10 @@ public class TClientes implements Serializable {
     private Short siRappel;
    // @Column(name = "fechaUltimaVisita")
     // @Temporal(TemporalType.TIMESTAMP)
+     @JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaUltimaVisita;
-   // @Column(name = "fechaProximaVisita")
-    // @Temporal(TemporalType.TIMESTAMP)
+
+     @JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaProximaVisita;
    // @Size(max = 40)
    // @Column(name = "comentario")
@@ -273,11 +275,9 @@ public class TClientes implements Serializable {
     private String regioneSocialeEnvioFra;
    // @Column(name = "diaPagoVacaciones1")
     private Short diaPagoVacaciones1;
-   // @Column(name = "vacacionesDe2")
-    // @Temporal(TemporalType.TIMESTAMP)
+@JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date vacacionesDe2;
-   // @Column(name = "vacacionesA2")
-    // @Temporal(TemporalType.TIMESTAMP)
+@JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date vacacionesA2;
    // @Column(name = "diaPagoVacaciones2")
     private Short diaPagoVacaciones2;
@@ -305,8 +305,7 @@ public class TClientes implements Serializable {
     private Short potencial;
    // @Column(name = "tipoNIF")
     private Short tipoNIF;
-   // @Column(name = "fechaModificacionCobro")
-    // @Temporal(TemporalType.TIMESTAMP)
+@JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaModificacionCobro;
    // 
    // @Column(name = "comentarioEnvio")
@@ -421,8 +420,7 @@ public class TClientes implements Serializable {
    // 
    // @Column(name = "codigoProveedorCESCE")
     private String codigoProveedorCESCE;
-   // @Column(name = "fechaAdmisionCESCE")
-    // @Temporal(TemporalType.TIMESTAMP)
+@JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaAdmisionCESCE;
    // @Column(name = "riesgoPropioCESCE")
     private Boolean riesgoPropioCESCE;
@@ -432,8 +430,7 @@ public class TClientes implements Serializable {
     
    // @Column(name = "pathDocEnviada")
     private String pathDocEnviada;
-   // @Column(name = "fechaVencimientoCESCE")
-    // @Temporal(TemporalType.TIMESTAMP)
+@JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaVencimientoCESCE;
   
     private String delegacion;
@@ -552,8 +549,7 @@ public class TClientes implements Serializable {
     private Integer superficieShowroom;
    // @Column(name = "cantidadExpoShowroom")
     private Integer cantidadExpoShowroom;
-   // @Column(name = "fechaCreacionTienda")
-    // @Temporal(TemporalType.TIMESTAMP)
+@JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaCreacionTienda;
     
    
@@ -562,7 +558,9 @@ public class TClientes implements Serializable {
     private Integer cestaMedia;
 
     private Integer ventasPotenciales;
+     @JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaVencimientoFrancia;
+        @JsonFormat(pattern="yyyy-MM-dd’T’HH:mm:ss.SSSZ")
     private Date fechaAdmisionFrancia;
 
     private Double creditoExterno;
