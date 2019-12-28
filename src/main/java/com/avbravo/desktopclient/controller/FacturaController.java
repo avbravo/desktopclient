@@ -39,7 +39,7 @@ public class FacturaController {
         try {
             System.out.println("==================INSERT===============");
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.3/resources/add");
+            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver/resources/add");
 
             Factura factura = new Factura(23, 134);
 

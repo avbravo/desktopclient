@@ -66,13 +66,13 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "importeTexto")
     private String importeTexto;
-
+  
     // @Column(name = "tipo")
     private String tipo;
     // @Column(name = "cambio")
     private Double cambio;
 
- 
+    // @Column(name = "nombreClienteVarios")
     private String nombreClienteVarios;
     // @Column(name = "siImprimir")
     private Boolean siImprimir;
@@ -95,7 +95,7 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "agencia")
     private String agencia;
-
+  
     // @Column(name = "digitoControl")
     private String digitoControl;
     
@@ -126,7 +126,7 @@ public class TEfectosCobro implements Serializable {
 
     // @Column(name = "CIN")
     private String cin;
- 
+
     // @Column(name = "CC")
     private String cc;
     // @Column(name = "idTalon")
@@ -140,7 +140,7 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "importeTextoMenosACuenta")
     private String importeTextoMenosACuenta;
- 
+
     // @Column(name = "sucursal")
     private String sucursal;
         
@@ -163,7 +163,7 @@ public class TEfectosCobro implements Serializable {
   
     // @Column(name = "codigoEfectoAgrupado")
     private String codigoEfectoAgrupado;
- 
+   
     // @Column(name = "facturaAgrupacion")
     private String facturaAgrupacion;
     // @Column(name = "idEfectoAgrupado")

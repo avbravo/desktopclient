@@ -82,7 +82,7 @@ public class TPedidos implements Serializable {
     
     // @Column(name = "codigoModelo")
     private String codigoModelo;
-  
+   
     // @Column(name = "observacionesTrans")
     private String observacionesTrans;
     // @Column(name = "puntos")
@@ -188,7 +188,7 @@ public class TPedidos implements Serializable {
     // @Column(name = "ordenEmisionAlbaranes")
     private Integer ordenEmisionAlbaranes;
     // @Column(name = "fechaPedidoReal")
-
+  
     private Date fechaPedidoReal;
     
     // @Column(name = "codigoCausal")

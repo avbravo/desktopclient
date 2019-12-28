@@ -5,7 +5,6 @@
  */
 package com.avbravo.desktopclient.services;
 
-
 import com.avbravo.desktopclient.sql.entiry.TClientes;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,24 +23,21 @@ import javax.ws.rs.core.Response;
  */
 public class TClientesServices {
 
-     public List<TClientes> findAll() {
-         List<TClientes> tClientesList = new ArrayList<>();
+    public List<TClientes> findAll() {
+        List<TClientes> tClientesList = new ArrayList<>();
         try {
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver-0.3/resources/tclientes");
+            WebTarget target = client.target("http://localhost:8080/microservicesfiscalsqlserver/resources/tclientes");
 
             GenericType<List<TClientes>> noticias = new GenericType<List<TClientes>>() {
             };
 
-           tClientesList = target.request(MediaType.APPLICATION_JSON).get(noticias);
-           
+            tClientesList = target.request(MediaType.APPLICATION_JSON).get(noticias);
+
         } catch (Exception e) {
             System.out.println("findAll()");
         }
         return tClientesList;
     }
-
-    
-    
 
 }

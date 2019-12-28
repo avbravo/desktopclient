@@ -10,13 +10,6 @@ import com.avbravo.desktopclient.controller.TClientesController;
 import com.avbravo.desktopclient.controller.FacturaController;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.List;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
 
 /**
  *

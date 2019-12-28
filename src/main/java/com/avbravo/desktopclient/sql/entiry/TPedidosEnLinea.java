@@ -8,7 +8,6 @@ package com.avbravo.desktopclient.sql.entiry;
 import java.io.Serializable;
 import java.util.Date;
 
-
 /**
  *
  * @author avbravo
@@ -64,7 +63,7 @@ public class TPedidosEnLinea implements Serializable {
     private Double baseImponible;
     // @Column(name = "codigoPersiana")
     private Integer codigoPersiana;
-
+   
     // @Column(name = "tipoFactura")
     private String tipoFactura;
     // @Column(name = "anchuraFigura")
