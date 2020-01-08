@@ -5,6 +5,7 @@
  */
 package com.avbravo.desktopclient.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,6 +17,7 @@ import java.util.Date;
 public class Jsdconfiguracion implements Serializable {
 
     private String idconfiguracion;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     private Date fechainicio;
 
    

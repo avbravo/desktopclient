@@ -5,6 +5,7 @@
  */
 package com.avbravo.desktopclient.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 
 /**
@@ -15,6 +16,7 @@ public class Jsdformapago {
 
     private Integer idformapago;
     private String formapago;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     private Date fecha;
     private String username;
 

@@ -5,6 +5,7 @@
  */
 package com.avbravo.desktopclient.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
@@ -18,6 +19,7 @@ public class Jsdnotascredito {
     private Integer numfiscalnc; //genera la impresora DEBE ESTAR ENCRIPTADO..
     private Integer idfactura; //
     private String impreso; // inicialmente no
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     private Date fecha;
     private String hora;
     private String username;

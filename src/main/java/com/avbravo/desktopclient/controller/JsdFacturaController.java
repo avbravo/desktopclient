@@ -23,13 +23,14 @@ import javax.ws.rs.core.MediaType;
  */
 public class JsdFacturaController {
 
-    JsdFacturaServices jsdjsdfacturaServices = new JsdFacturaServices();
+    JsdFacturaServices  jsdfacturaServices = new JsdFacturaServices();
 
     public void noImpreas() {
         try {
-            List<Jsdfactura> list = jsdjsdfacturaServices.noImpresas();
+            List<Jsdfactura> list =  jsdfacturaServices.noImpresas();
             for (Jsdfactura f : list) {
-                System.out.println(f.getCodigo_pedido()+ " nombre"+ f.getNombre()+ "Estado" + f.getEstado());
+                System.out.println(f.getCodigo_pedido() + " fecha: "+f.getFecha() + " nombre"+ f.getNombre()+ "Estado" + f.getEstado());
+               jsdfacturaServices.add(f);
             }
         } catch (Exception e) {
             System.out.println("noImpreas()"+e.getLocalizedMessage());
@@ -42,11 +43,11 @@ public class JsdFacturaController {
 //            Client client = ClientBuilder.newClient();
 //            WebTarget target = client.target("http://192.168.0.5:8080:8080/microservicesfiscalsqlserver/resources/add");
 //
-//            Jsdfactura jsdjsdfactura = new Jsdfactura(23, 134);
+//            Jsdfactura  jsdfactura = new Jsdfactura(23, 134);
 //
 //            jsdfactura requestResult
 //                    = target.request(MediaType.APPLICATION_JSON_TYPE)
-//                            .post(Entity.entity(jsdjsdfactura, MediaType.APPLICATION_FORM_URLENCODED_TYPE),
+//                            .post(Entity.entity( jsdfactura, MediaType.APPLICATION_FORM_URLENCODED_TYPE),
 //                                    jsdfactura.class);
 //            System.out.println("creo que lo inserto");
 
@@ -61,17 +62,17 @@ public class JsdFacturaController {
             BufferedReader reader
                     = new BufferedReader(new InputStreamReader(System.in));
 
-            Jsdfactura jsdjsdfactura = new Jsdfactura();
-            System.out.println("Crear jsdjsdfactura ");
-            System.out.println("ingrese idjsdjsdfactura ");
+            Jsdfactura  jsdfactura = new Jsdfactura();
+            System.out.println("Crear  jsdfactura ");
+            System.out.println("ingrese id jsdfactura ");
             String text = reader.readLine();
-            jsdjsdfactura.setIdfactura(Integer.parseInt(text));
+             jsdfactura.setIdfactura(Integer.parseInt(text));
 
             System.out.println("ingrese numero de estado ");
             text = reader.readLine();
-            jsdjsdfactura.setEstado(Integer.parseInt(text));
+             jsdfactura.setEstado(Integer.parseInt(text));
 
-            jsdjsdfacturaServices.add(jsdjsdfactura);
+             jsdfacturaServices.add( jsdfactura);
 
         } catch (Exception e) {
             System.out.println("errort" + e.getLocalizedMessage());

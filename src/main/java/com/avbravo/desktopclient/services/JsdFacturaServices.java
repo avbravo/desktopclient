@@ -29,7 +29,7 @@ public class JsdFacturaServices {
          List<Jsdfactura> jsdfacturaList = new ArrayList<>();
         try {
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://192.168.115.4:8080/fiscalserver/resources/jsdfactura/%7Bnoimpresas%7D");
+            WebTarget target = client.target("http://192.168.60.243:8080/fiscalserver/resources/jsdfactura/%7Bnoimpresas%7D");
 
             GenericType<List<Jsdfactura>> data = new GenericType<List<Jsdfactura>>() {
             };
@@ -47,7 +47,7 @@ public class JsdFacturaServices {
         try {
             Client client = ClientBuilder.newClient();
             WebTarget webTarget
-                    = client.target("http://192.168.0.5:8080/microservicesfiscalsqlserver/resources/factura/factura/add");
+                    = client.target("http://192.168.60.243:8080/microservicesfiscalsqlserver/resources/jsdfactura/jsdfactura/add");
 
             
             Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);

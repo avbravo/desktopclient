@@ -19,8 +19,9 @@ public class Jsdfactura {
     private String lc; //TPEDIDOS.LC
     private Integer empresa; //TPEDIDOS.empresa
     private Double subtotal;  //TPEDIDOS.totalBruto
-//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
-//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ssZ")
+
+
+//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd ", timezone = "UTC")
 @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     private Date fecha; //TPEDIDOS.fecha_pedido
     private String observaciones; //TPEDIDOS.observaciones
