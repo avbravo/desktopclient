@@ -30,7 +30,9 @@ public class JsdFacturaController {
             List<Jsdfactura> list =  jsdfacturaServices.noImpresas();
             for (Jsdfactura f : list) {
                 System.out.println(f.getCodigo_pedido() + " fecha: "+f.getFecha() + " nombre"+ f.getNombre()+ "Estado" + f.getEstado());
-               jsdfacturaServices.add(f);
+                f.setIdfactura(1);
+                
+             //  jsdfacturaServices.add(f);
             }
         } catch (Exception e) {
             System.out.println("noImpreas()"+e.getLocalizedMessage());
