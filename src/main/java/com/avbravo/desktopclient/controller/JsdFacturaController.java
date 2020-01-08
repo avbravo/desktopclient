@@ -32,7 +32,7 @@ public class JsdFacturaController {
                 System.out.println(f.getCodigo_pedido() + " fecha: "+f.getFecha() + " nombre"+ f.getNombre()+ "Estado" + f.getEstado());
                 f.setIdfactura(1);
                 
-             //  jsdfacturaServices.add(f);
+            jsdfacturaServices.add(f);
             }
         } catch (Exception e) {
             System.out.println("noImpreas()"+e.getLocalizedMessage());

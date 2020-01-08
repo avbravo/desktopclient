@@ -28,7 +28,7 @@ public class FacturaServices {
          List<Factura> facturaList = new ArrayList<>();
         try {
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://192.168.0.5:8080/microservicesfiscalsqlserver/resources/factura");
+            WebTarget target = client.target("http://192.168.60.243:8080/fiscalserver/resources/factura");
 
             GenericType<List<Factura>> noticias = new GenericType<List<Factura>>() {
             };
@@ -46,7 +46,7 @@ public class FacturaServices {
         try {
             Client client = ClientBuilder.newClient();
             WebTarget webTarget
-                    = client.target("http://192.168.0.5:8080/microservicesfiscalsqlserver/resources/factura/factura/add");
+                    = client.target("http://192.168.60.243:8080/fiscalserver/resources/factura/factura/add");
 
             
             Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);

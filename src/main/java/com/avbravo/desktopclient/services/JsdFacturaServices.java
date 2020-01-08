@@ -47,7 +47,7 @@ public class JsdFacturaServices {
         try {
             Client client = ClientBuilder.newClient();
             WebTarget webTarget
-                    = client.target("http://192.168.60.243:8080/microservicesfiscalsqlserver/resources/jsdfactura/jsdfactura/add");
+                    = client.target("http://192.168.60.243:8080/fiscalserver/resources/jsdfactura/jsdfactura/add");
 
             
             Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
