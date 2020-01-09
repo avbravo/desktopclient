@@ -29,7 +29,7 @@ public class JsdFacturaServices {
          List<Jsdfactura> jsdfacturaList = new ArrayList<>();
         try {
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://192.168.60.243:8080/fiscalserver/resources/jsdfactura/%7Bnoimpresas%7D");
+            WebTarget target = client.target("http://192.168.0.5:8080/fiscalserver/resources/jsdfactura/%7Bnoimpresas%7D");
 
             GenericType<List<Jsdfactura>> data = new GenericType<List<Jsdfactura>>() {
             };
@@ -47,7 +47,7 @@ public class JsdFacturaServices {
         try {
             Client client = ClientBuilder.newClient();
             WebTarget webTarget
-                    = client.target("http://192.168.60.243:8080/fiscalserver/resources/jsdfactura/jsdfactura/add");
+                    = client.target("http://192.168.0.5:8080/fiscalserver/resources/jsdfactura/jsdfactura/add");
 
             
             Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
@@ -62,4 +62,28 @@ public class JsdFacturaServices {
         return false;
     }
 
+    
+    
+    /**
+     * consulta por codigo_pedido
+     * @param codigo_
+     * @return 
+     */
+    public Jsdfactura findByCodigo(String codigo_pedido){
+        Jsdfactura jsdfactura = new Jsdfactura();
+        try {
+             Client client = ClientBuilder.newClient();
+            jsdfactura = client
+         .target("http://192.168.0.5:8080/fiscalserver/resources/jsdfactura/jsdfactura/")
+         .path("/{codigo_pedido}")
+         .resolveTemplate("codigo_pedido", codigo_pedido)
+         .request(MediaType.APPLICATION_JSON)
+         .get(Jsdfactura.class);
+            
+      //String result = FAIL;
+        } catch (Exception e) {
+            System.out.println("findByCodigo() "+e.getLocalizedMessage());
+        }
+        return jsdfactura;
+    }
 }

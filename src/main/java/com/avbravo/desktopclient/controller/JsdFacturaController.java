@@ -81,4 +81,19 @@ public class JsdFacturaController {
         }
         return false;
     }
+    
+    public void findByCodigo_pedido(){
+        try {
+            Jsdfactura jsdfactura = new Jsdfactura();
+            jsdfactura = jsdfacturaServices.findByCodigo("1/21-0001");
+            if(jsdfactura == null){
+                System.out.println("no encontrado");
+            }else{
+                System.out.println("encontrado.................................");
+                System.out.println(jsdfactura.getCodigo_pedido() +" fecha: "+jsdfactura.getFecha());
+            }
+        } catch (Exception e) {
+            System.out.println("findByCodigo_pedido() "+e.getLocalizedMessage());
+        }
+    }
 }

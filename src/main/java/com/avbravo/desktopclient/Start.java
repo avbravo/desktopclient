@@ -45,6 +45,7 @@ public class Start {
                 System.out.println(Colores.azul()+"(2)Factura add");
                 System.out.println(Colores.azul()+"(3)Clientes findAll");
                 System.out.println(Colores.azul()+"(4)no Impresas");
+                System.out.println(Colores.azul()+"(5) findByCodigo_Pedido(1/21-0001)");
                 
 
                 System.out.println(Colores.azul()+"(s)alir");
@@ -70,6 +71,11 @@ public class Start {
                         break;
                     case "4":
                         jsdFacturaController.noImpreas();
+                        System.out.println("...Presione una tecla");
+                        tecla = reader.readLine();
+                        break;
+                    case "5":
+                        jsdFacturaController.findByCodigo_pedido();
                         System.out.println("...Presione una tecla");
                         tecla = reader.readLine();
                         break;
