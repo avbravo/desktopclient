@@ -142,7 +142,7 @@ public void testNewOwner(Integer idfactura, String codigo_pedido, Date fecha) {
             form.param("fecha", fecha.toString());
  Client client = ClientBuilder.newClient();
   WebTarget webTarget
-                    = client.target("http://192.168.0.5:8080/fiscalserver/resources/jsdfactura/");
+                    = client.target("http://192.168.0.5:8080/fiscalserver/resources/jsdfactura");
     final Response r2 = client.target("/jsdfactura/createformparam").request().post(Entity.form(form));
     System.out.println(" -->r2"+r2);
     
