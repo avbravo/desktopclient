@@ -44,8 +44,11 @@ public class Start {
                 System.out.println(Colores.azul()+"(1)Factura findAll");
                 System.out.println(Colores.azul()+"(2)Factura add");
                 System.out.println(Colores.azul()+"(3)Clientes findAll");
-                System.out.println(Colores.azul()+"(4)no Impresas");
-                System.out.println(Colores.azul()+"(5) findByCodigo_Pedido(1/21-0001)");
+                System.out.println("-------------------------------------");
+                System.out.println(Colores.azul()+"(4)jsdfactura.no Impresas");
+                System.out.println(Colores.azul()+"(5) jsdfacturafindByCodigo_Pedido(1/21-0001)");
+                System.out.println(Colores.azul()+"(6) jsdfactura createFormParam");
+                System.out.println(Colores.azul()+"(7) jsdfactura testNewOwner");
                 
 
                 System.out.println(Colores.azul()+"(s)alir");
@@ -76,6 +79,16 @@ public class Start {
                         break;
                     case "5":
                         jsdFacturaController.findByCodigo_pedido();
+                        System.out.println("...Presione una tecla");
+                        tecla = reader.readLine();
+                        break;
+                    case "6":
+                        jsdFacturaController.createFormParam();
+                        System.out.println("...Presione una tecla");
+                        tecla = reader.readLine();
+                        break;
+                    case "7":
+                        jsdFacturaController.testNewOwner();
                         System.out.println("...Presione una tecla");
                         tecla = reader.readLine();
                         break;

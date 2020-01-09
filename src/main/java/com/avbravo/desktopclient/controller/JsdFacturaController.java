@@ -10,6 +10,7 @@ import com.avbravo.desktopclient.services.JsdFacturaServices;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Date;
 import java.util.List;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -94,6 +95,24 @@ public class JsdFacturaController {
             }
         } catch (Exception e) {
             System.out.println("findByCodigo_pedido() "+e.getLocalizedMessage());
+        }
+    }
+    public void createFormParam(){
+        try {
+            jsdfacturaServices.createFormParam(1, "Codi", new Date());
+           
+        } catch (Exception e) {
+            System.out.println("createFormParam() "+e.getLocalizedMessage());
+        }
+    }
+    
+    
+    public void testNewOwner(){
+        try {
+            jsdfacturaServices.testNewOwner(1, "Codi", new Date());
+           
+        } catch (Exception e) {
+            System.out.println("testNewOwner()() "+e.getLocalizedMessage());
         }
     }
 }
